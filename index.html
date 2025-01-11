@@ -27,6 +27,9 @@ const score = {
   tie: 0
 }
 
+//here i used a get method to make the score to be read
+console.log(localStorage.getItem('score'));
+
 function gamePlay(){
     const randomNumber = Math.random();
     let computerMove ='';
@@ -40,6 +43,9 @@ function gamePlay(){
     else if(randomNumber >= 2 / 3 && randomNumber <= 1){
         computerMove = "rock";
     }
+//this is used to store the score because once when you refresh the page
+//the variables are deleted
+    localStorage.setItem('score',JSON.stringify(score));
 
     return computerMove;
 }
